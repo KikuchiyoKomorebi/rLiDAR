@@ -51,12 +51,12 @@
 #'
 #'@importFrom bitops bitAnd bitShiftR
 #'@export
-LASmetrics<-function(LASfile,minht=1.37,above=2) {
+LASmetrics<-function(LASdat,minht=1.37,above=2) {
 
   if (class(minht)!="numeric") {stop("The minht parameter is invalid. It is not a numeric input")}
   if (class(above)!="numeric") {stop("The above parameter is invalid. It is not a numeric input")}
   
-  LASfile<-readLAS(LASfile, short=T)
+  LASfile<-LASdat
   
   MaxZ<-max(LASfile[,"Z"])
   
